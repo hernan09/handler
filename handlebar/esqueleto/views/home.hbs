@@ -1,0 +1,120 @@
+<div id="bodyHome">
+    <div id="nav2">
+      <h1>bienvenido {{nombre}}</h1>
+      <button type="button" class="btn btn-info"><a href="/api/product">PRODUCTOS</a></button>
+      
+      <button type="button" class="btn btn-danger"><a href="/api/salir">SALIR</a></button>
+    </div>
+     
+    <div id="padreHome">
+      <form id="formu2" action="/api/home" method="POST" enctype = "multipart/form-data">
+       
+      <button type="button" id="buton2" class="btn btn-secondary">OBTENER</button>
+      </form>
+        
+    
+      
+        
+    </div>
+
+     <div id="article">
+        <div class="card mb-3">
+            
+            <img style="height: 200px; width: 100%; display: block;" id="img" 
+                alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Presentacion
+                    </p>
+            </div>
+            
+           
+        </div>
+        
+
+     </div>
+       
+
+    
+    <div id="main2">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">sexo</th>
+            </tr>
+        </thead>
+        <tbody id="contenido">
+          
+            <tr class="table-dark">
+                <th scope="row">1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+        </tbody>
+    </table>
+       
+       
+    
+     
+     </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+ let btn=document.querySelector('#buton2')
+ let formu=document.getElementsByName("formu2")
+ let divMain2=document.querySelector('#main2')
+ let tabla=document.querySelector('#contenido')
+ let img1=document.querySelector('#img')
+ let card=document.querySelector('#article')
+
+
+ 
+
+    
+
+btn.addEventListener("click",e=>{
+    e.preventDefault()
+
+  
+    
+   fetch('https://randomuser.me/api/')
+   .then(resp=>resp.json()).then(data=>{
+       card.style.display="block"
+      tablas(data)
+      
+      
+    })
+   
+
+
+  
+
+})
+
+function tablas(data){
+    console.log(data)
+    
+    
+        tabla.innerHTML = `<tr class="table-dark">
+                <th scope="row">1</th>
+                <td>${data.results[0].name.first}</td>
+                <td>${data.results[0].email}</td>
+                <td>${data.results[0].gender}</td>
+         </tr>`
+
+    
+    
+    
+       img1.src=`${data.results[0].picture.medium}`
+
+}
+</script>

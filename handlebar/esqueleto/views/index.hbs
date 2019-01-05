@@ -1,0 +1,103 @@
+<html>
+ <body>
+<!--el nav-->
+    <div id="nav">
+        <nav  id="nav1" class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Intenta</a>
+             
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                    
+                   
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                 <a class="nav-link" href="#">About</a>
+                </li>
+                </ul>
+                  
+            </div>
+      </nav>
+    </div>
+
+<!--el main-->
+<div id="oculto">
+<button type="button" id="btnoculto" class="btn btn-secondary"> <h6>Ingresar</h6></button>
+</div>
+    <div id="main">
+        <form action="/api/form" method="POST" id="form">
+            <input class="form-control form-control-sm" type="text" placeholder="Nombre" id="inputSmall" name="nombre">
+            <br>
+            <input class="form-control form-control-sm" type="text" placeholder="password" id="inputSmall" name="pass">
+            <br>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+
+        </form>
+          <br>
+        <div id="hora">
+        
+        </div>
+        
+       
+    </div>
+    
+
+    <!--el footer-->
+    <div id="footer">
+       
+      <blockquote class="blockquote text-center" id="cuote">
+        <blockquote class="blockquote text-center">
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        </blockquote>
+    
+      </blockquote>
+    </div>
+
+
+<script type="text/javascript">
+   let hora=document.querySelector('#hora')
+   let btn=document.querySelector('#btnoculto')
+   let main=document.querySelector('#main')
+    btn.addEventListener("click",e=>{
+         e.preventDefault()
+
+          main.style.display="flex"
+          btn.style.display="none"
+
+     })
+
+
+
+
+
+  function horas(){
+
+  let d=new Date()
+
+  let hour=d.getHours();
+  let min=d.getMinutes();
+  let sec=d.getSeconds();
+    if(min>9){
+       hora.innerHTML = hour + " : " + min 
+    }else{
+       hora.innerHTML = hour + " : " +"0"+ min 
+    }
+
+
+    
+  
+
+
+   }
+   setInterval(horas,1000)
+
+
+
+</script>
+ </body>
+
+</html>
+
+

@@ -1,0 +1,42 @@
+<div id="container">
+ 
+  <h1>{{data.id}}</h1>
+  
+  
+  
+
+
+  <div id="formupdate">
+    <form id="formup" action="/api/update/{{data.id}}" method="POST" >
+      
+      
+       
+      <input type="text" class="form-control" value="{{data.nombre}}" name="nombre">
+      <br>
+      <input type="text" class="form-control" value="{{data.price}}" name="price">
+      <br>
+      <input id="edit" class="btn" type="submit" value="GUARDAR">
+    
+    </form>
+
+
+  </div>
+  
+  
+  <div id="prodFoter">
+    <div id="sub2">
+      <h5>{{nombre}}</h5>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam atque aperiam amet necessitatibus nam adipisci
+        magni maxime aut dolorum odit fugiat, quod itaque cum eligendi tempora officiis animi, nobis ullam.</p>
+      
+
+    </div>
+    
+  
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+</script>

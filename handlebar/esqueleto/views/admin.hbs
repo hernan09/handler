@@ -1,0 +1,40 @@
+<h1>welcome  {{nombre}}</h1>
+
+
+<a class="btn btn-primary btn-lg" href="/api/salir" role="button">Salir</a>
+        
+   <div id="cajaAdmin">
+          <h1>Bienvenido a Intenta</h1>
+
+          <div id="caja2Admin">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quidem et laborum non velit doloribus ea fugit
+                quam assumenda ipsam consectetur sunt eligendi at harum dolor? Quo eligendi ducimus voluptatum. Lorem Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Odio corporis tenetur sunt sit ad aliquam ullam, vitae
+                minima quae in praesentium temporibus assumenda repellat cumque dolor ipsum excepturi amet repellendus. Lorem ipsum dolor sit amet .</p>
+          </div>
+         
+
+   </div>
+
+<button type="button" id="btnScrap" class="btn btn-outline-danger">Scraping</button>
+
+
+<script type="text/javascript">
+
+let btn=document.querySelector('#btnScrap')
+btn.addEventListener('click',e=>{
+      e.preventDefault()
+
+fetch('/api/scrap').then(resp=>resp.json()).then(data=>{
+      console.log(data)
+})
+
+
+})
+
+
+
+
+
+</script>        
+   

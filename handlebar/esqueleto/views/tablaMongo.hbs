@@ -1,0 +1,76 @@
+<div id="padreTablaMongo">
+  <h4>bienvenido  {{nombre}}</h4>
+  <button type="button" class="btn"><a href="/api/salir">SALIR</a></button>
+
+</div>
+<br>
+<div id="navForm">
+<form action="/api/product" method="POST">
+    <input type="text" class="form-control" name="nombre">
+    <input type="text" class="form-control" name="price">
+
+    <button id="btnInsertar" class="btn btn-primary btn-lg btn-block " name="btn">INSERTAR</button>
+
+
+</form>
+
+</div>
+<br>
+
+
+<div id="contTabla">
+  <table id="tablaMongo" class="table table-hover">
+    <thead>
+        <tr>
+
+            <th scope="col">Id</th>
+            <th scope="col">Price</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Modificar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each productEncontrados}}
+        <tr id="trx" class="table-dark">
+            <td id="trId">{{id}}</td>
+            <td>{{price}}</td>
+            <td>{{nombre}}</td>
+            <td><a href="/api/delete/{{id}}" class="btn btn-danger">Eliminar</a></td>
+            <td><a href="/api/product/{{id}}" class="btn btn-info">Modificar</a></td>
+
+        </tr>
+        {{/each}}
+    </tbody>
+  </table>
+
+
+</div>
+
+<div id="mongoFoter">
+    <div id="sub3">
+        <h5>{{nombre}}</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio tempora asperiores eius ut reprehenderit porro soluta
+            aliquid molestias quas dolorum laborum ullam, iure mollitia voluptas! Autem unde quam qui nulla.</p>
+
+    </div>
+
+   
+</div>
+
+
+
+<script type="text/javascript">
+    
+   
+
+        
+
+    
+   
+     
+
+
+
+
+</script>
